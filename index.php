@@ -1,8 +1,8 @@
 <?php
 require 'config/db.php';
 
-$stmt = $pdo->query("SELECT * FROM livres");
-$livres = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$stmt = $pdo->query("SELECT * FROM books");
+$books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -22,14 +22,14 @@ $livres = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <th>Note</th>
             <th>Actions</th>
         </tr>
-        <?php foreach ($livres as $livre): ?>
+        <?php foreach ($books as $book): ?>
         <tr>
-            <td><?= htmlspecialchars($livre['titre']) ?></td>
-            <td><?= htmlspecialchars($livre['categorie']) ?></td>
-            <td><?= $livre['note'] ?> ⭐</td>
+            <td><?= htmlspecialchars($book['title']) ?></td>
+            <td><?= htmlspecialchars($book['category']) ?></td>
+            <td><?= $book['rating'] ?> ⭐</td>
             <td>
-                <a href="edit.php?id=<?= $livre['id'] ?>">Modifier</a> |
-                <a href="delete.php?id=<?= $livre['id'] ?>" onclick="return confirm('Supprimer ce livre ?')">Supprimer</a>
+                <a href="edit.php?id=<?= $book['id'] ?>">Modifier</a> |
+                <a href="delete.php?id=<?= $book['id'] ?>" onclick="return confirm('Supprimer ce livre ?')">Supprimer</a>
             </td>
         </tr>
         <?php endforeach; ?>
