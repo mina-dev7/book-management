@@ -49,8 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label>Rating (1–5):</label><br>
         <input type="number" name="rating" min="1" max="5" value="<?= $book['rating'] ?>"><br><br>
 
-        <button type="submit">Update Book</button>
+        <button type="submit" class="btn">Update Book</button>
     </form>
-    <p><a href="index.php">Back to List</a></p>
+    <p><a href="index.php" class="btn">Back to List</a></p>
 </body>
 </html>

@@ -14,7 +14,7 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <h1>My Books 📚</h1>
-    <a href="add.php">Add a Book</a>
+    <a href="add.php" class="btn">Add a Book</a>
     <table border="1">
         <tr>
             <th>Title</th>
@@ -28,8 +28,8 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <td><?= htmlspecialchars($book['category']) ?></td>
             <td><?= $book['rating'] ?> ⭐</td>
             <td>
-                <a href="edit.php?id=<?= $book['id'] ?>">Edit</a> |
-                <a href="delete.php?id=<?= $book['id'] ?>" onclick="return confirm('Delete this book?')">Delete</a>
+                <a href="edit.php?id=<?= $book['id'] ?>" class="btn">Edit</a>
+                <a href="delete.php?id=<?= $book['id'] ?>" class="btn danger" onclick="return confirm('Are you sure you want to delete this book?')">Delete</a>
             </td>
         </tr>
         <?php endforeach; ?>

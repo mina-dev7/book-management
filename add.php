@@ -24,17 +24,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <h1>Add a New Book</h1>
     <form method="POST">
-        <label for="title">Title:</label><br>
-        <input type="text" name="title" id="title" required><br><br>
+        <label>Title:</label><br>
+        <input type="text" name="title" required><br><br>
 
-        <label for="category">Category:</label><br>
-        <input type="text" name="category" id="category"><br><br>
+        <label>Category:</label><br>
+        <input type="text" name="category"><br><br>
 
-        <label for="rating">Rating (0 to 5):</label><br>
-        <input type="number" name="rating" id="rating" min="0" max="5"><br><br>
+        <label>Rating (1–5):</label><br>
+        <input type="number" name="rating" min="1" max="5"><br><br>
 
-        <button type="submit">Save</button>
-        <a href="index.php">Cancel</a>
+        <button type="submit" class="btn">Save Book</button>
+        <a href="index.php" class="btn">Cancel</a>
     </form>
 </body>
 </html>
